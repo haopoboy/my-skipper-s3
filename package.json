@@ -1,0 +1,48 @@
+{
+  "name": "@haopoboy/skipper-s3",
+  "version": "0.1.0",
+  "description": "Ahead merged version from official skipper-s3",
+  "main": "index.js",
+  "scripts": {
+    "custom-tests": "node -e \"require('skipper-adapter-tests')({mocha: { timeout: 360000 }, module: require('./'), bucket:process.env.BUCKET || 'skipper-adapter-tests', key: process.env.KEY, secret: process.env.SECRET});\"",
+    "lint": "eslint . --max-warnings=0 --ignore-pattern 'test/' && echo '✔  Your code looks good.'",
+    "test": "npm run lint && npm run custom-tests && npm run bench",
+    "bench": "node -e \"console.log('There are no additional performance benchmarks yet.')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/haopoboy/skipper-s3-ha.git"
+  },
+  "keywords": [
+    "s3",
+    "streaming-file-upload",
+    "streaming",
+    "file",
+    "upload",
+    "sails",
+    "express"
+  ],
+  "author": "Mike McNeil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haopoboy/skipper-s3-ha/issues"
+  },
+  "homepage": "https://github.com/haopoboy/skipper-s3-ha",
+  "dependencies": {
+    "@sailshq/lodash": "^3.10.2",
+    "aws-sdk": "2.391.0",
+    "flaverr": "^1.9.2",
+    "mime": "2.4.2"
+  },
+  "devDependencies": {
+    "mocha": "3.0.2",
+    "skipper-adapter-tests": "^2.0.0-0",
+    "eslint": "4.19.1"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
